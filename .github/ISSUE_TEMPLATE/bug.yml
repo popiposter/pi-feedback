@@ -1,0 +1,62 @@
+name: Bug / missing capability
+description: Sanitized Development Kit or Desktop integration problem
+body:
+  - type: markdown
+    attributes:
+      value: "STOP: no credentials, source, logs, prompts, private repo URLs, local paths, business names/IDs, BookStack content, test data or screenshots containing them. Security details: use private vulnerability reporting."
+  - type: checkboxes
+    id: redaction
+    attributes:
+      label: Redaction review
+      options:
+        - label: I reviewed every field and removed private data, URLs, paths, secrets and raw content; this is not a security report.
+          required: true
+  - type: input
+    id: desktop
+    attributes:
+      label: Public PI / Desktop version
+    validations:
+      required: true
+  - type: input
+    id: kit
+    attributes:
+      label: Development Kit bundle identity
+      description: Public content hash from Desktop; no private source commit or path.
+    validations:
+      required: true
+  - type: input
+    id: tools
+    attributes:
+      label: EDT-MCP / relevant tool versions
+      description: Exact versions or not applicable.
+    validations:
+      required: true
+  - type: input
+    id: route
+    attributes:
+      label: Generic capability / route
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Generic descriptions only; never paste source or tool output.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Sanitized synthetic reproduction and evidence availability
+      description: No private paths, names, URLs, raw logs or attachments. Keep supporting evidence private.
+    validations:
+      required: true
+  - type: dropdown
+    id: blocked
+    attributes:
+      label: Is project delivery blocked?
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
